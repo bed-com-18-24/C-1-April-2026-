@@ -1,19 +1,17 @@
 #include <iostream>
 #include <cstdlib> //for rand from the c++ library and srand
 #include <ctime>   // for time functions
+
 using namespace std;
 
 int main()
 {
-    // Geting the System time
-    unsigned seed = time(0);
-
-    // seed te random number generator
-    srand(seed);
-
-    int daysUntilExpiration = (rand() % (11 - 0 + 1) + 0); //(rand() % (maxValue − minValue + 1)) + minValue;
     cout << '\n';
+    unsigned seed = time(0); // Geting the System time
 
+    srand(seed); // seed te random number generator
+    int maxValue = 11, minValue = 0;
+    int daysUntilExpiration = (rand() % (maxValue - minValue + 1) + minValue); //(rand() % (maxValue − minValue + 1)) + minValue;
     if (daysUntilExpiration <= 10 && daysUntilExpiration > 5)
     {
         cout << "Your subscription will expire soon. Renew now! \n";
